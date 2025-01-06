@@ -3,3 +3,6 @@ output/
 
 # node modules directory
 node_modules/
+
+# mac os ds store file
+.DS_Store
