@@ -97,19 +97,6 @@ The crawler includes a retry mechanism that retries failed requests up to `maxRe
 
 Additionally, the crawler ensures that URLs that repeatedly fail are tracked in the `failedUrls` object for later review.
 
-## Questions/Clarifications asked via Email
-These are questions that I asked via email. Since I didn't hear back, These assumptions were made.
-
-- I understand the crawler should crawl on the links under the subdomain. But should the crawler crawl ALL of those links or just unique ones found under the subdomain?
-   - I assumed to crawl on the unique links I found on each page. Some of the pages contained duplicate or more than one of the same links. To avoid extra computational work, I only crawled on the unique links found.
-
-- Should the results of the crawler be saved to a file, displayed in the CLI or should I create a small frontend component to display them?
-   - I decided to output the results of the crawler to two JSON files. One that contains the results of the crawled data. Another file that kept track of URLs that were unsuccessful after multiple retries, if there were any. The point of the failed data was to come back and view them at a later time. Future improvements include a suggested frontend component.
-
-- Would you also like some sort of testing done as well, i.e. unit testing?
-   - To ensure each method performs as intended, I created some unit tests to account for that.
-
-
 ## Future Add-Ons
 
 - **Rate Limiting**: Implement dynamic rate-limiting based on server response headers (e.g., `X-RateLimit-Remaining`).
